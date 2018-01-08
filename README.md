@@ -13,10 +13,22 @@ Warning: It is by no means perfect! But is probably better than you on average ;
 ## Getting Started
 
 1) download PHP script and set it up on a localhost or webserver
-2) set up google's vision api locally, set variables to your auth file etc...
-3) plug in your phone to your computer and open quicktime. go to file->new movie, then hit the arrow next to the record button and select your phone. 
-4) open automator and allow run screenshot command and a run shell script command.
-5) In the shell script run:
+2) set up google's vision api locally, set variables to your auth file etc... Instructions here: https://cloud.google.com/vision/docs/quickstart
+3) set up google custom search engine api. Instructions here: https://support.google.com/customsearch/answer/2630963?hl=en
+4) In the php script change the following variables to the correct values
+``` // Key for Google Vision API
+    $VISION_API_KEY = "ENTER YOUR API KEY HERE";
+
+    // Keys for Google Custom Search URLs
+    $GCSE_API_KEY = "ENTER YOUR API KEY HERE";
+    $GCSE_SEARCH_ENGINE_ID = "ENTER YOUR SEARCH ENGINE ID HERE";
+
+    // URL of hosted script
+    $HOST_URL = "www.url.com/screenshot.png" ```
+
+5) plug in your phone to your computer and open quicktime. go to file->new movie, then hit the arrow next to the record button and select your phone. 
+6) open automator and allow run screenshot command and a run shell script command.
+7) In the shell script run:
 ```
 cd path/to/automator/screenshot
 curl -F "image=@./screenshot_name.png" 'http://www.url.com/hq.php'
