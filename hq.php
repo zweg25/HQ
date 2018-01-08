@@ -17,7 +17,7 @@
 	$GCSE_SEARCH_ENGINE_ID = "ENTER YOUR SEARCH ENGINE ID HERE";
 
 	// URL of hosted script
-	$HOST_URL = "www.url.com/screenshot.png"
+	$HOST_URL = "www.url.com/screenshot.png";
 
 
 	//DETECT TEXT WITH JSON REQUEST TO GOOGLE
@@ -79,6 +79,11 @@
 	$resp = json_decode($server_output, true);
 	$text = $resp["responses"][0]["textAnnotations"][0]["description"];
 	$text = strtolower($text);
+
+	// Error check
+	if (!$text || $text == "")
+		die("There was an unexpected error");
+
 	list($question, $listofanswers) = explode('?', $text, 2);
 
 	// Does question contain the word "not" or "never"
