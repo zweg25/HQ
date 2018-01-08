@@ -307,7 +307,6 @@
         for ($i = 0; $i < $node_count; $i++) {
             $data = curl_multi_getcontent($curl_arr[$i]);
             if ($data) {
-                $connectedSites++;
                 $totalSnips.= strtolower($data);
             }
         }
