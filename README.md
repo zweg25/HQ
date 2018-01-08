@@ -26,7 +26,7 @@ Warning: It is by no means perfect! But is probably better than you on average ;
     // URL of hosted script
     $HOST_URL = "www.url.com/screenshot.png"
 ```
-NOTE: If you are using LOCALHOST instead of a web host, you must UNCOMMENT the base64 image conversion, around line 
+NOTE: If you are using LOCALHOST instead of a web host, you must UNCOMMENT the base64 image conversion, around lines 50-65.
 
 5) plug in your phone to your computer and open quicktime. go to file->new movie, then hit the arrow next to the record button and select your phone. 
 6) open automator and allow run screenshot command and a run shell script command.
