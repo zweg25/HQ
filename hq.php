@@ -10,14 +10,14 @@
 	}
 
 	// Key for Google Vision API
-    $VISION_API_KEY = "ENTER YOUR API KEY HERE";
+	$VISION_API_KEY = "ENTER YOUR API KEY HERE";
 
-    // Keys for Google Custom Search URLs
-    $GCSE_API_KEY = "ENTER YOUR API KEY HERE";
-    $GCSE_SEARCH_ENGINE_ID = "ENTER YOUR SEARCH ENGINE ID HERE";
+	// Keys for Google Custom Search URLs
+	$GCSE_API_KEY = "ENTER YOUR API KEY HERE";
+	$GCSE_SEARCH_ENGINE_ID = "ENTER YOUR SEARCH ENGINE ID HERE";
 
-    // URL of hosted script
-    $HOST_URL = "www.url.com/screenshot.png"
+	// URL of hosted script
+	$HOST_URL = "www.url.com/screenshot.png"
 
 
 	//DETECT TEXT WITH JSON REQUEST TO GOOGLE
@@ -38,6 +38,31 @@
 	        }
 	      ]
 	    }';
+
+	/*
+		NOTE: IF YOU ARE HOSTING ON LOCALHOST, 
+		YOU WILL NEED TO SEND THE IMAGE TO GOOGLE THROUGH THE FOLLOWING
+		COMMENTED OUT WAY. IT IS SLIGHTLY SLOWER.
+	*/
+
+	/*
+	$base64 = base64_encode(file_get_contents($target_path));
+	    $JSON_TEST = '{
+	      "requests": [
+	        {
+	          "image": {
+	              "content": "'.$base64.'"
+	          },
+	          "features": [
+	            {
+	              "type": "TEXT_DETECTION",
+	              "maxResults": 1
+	            }
+	          ]
+	        }
+	      ]
+	    }';
+	*/
 
 	// REQUEST TEXT FROM GOOGLE VISION
 	$ch = curl_init();
