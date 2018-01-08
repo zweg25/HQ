@@ -1,7 +1,7 @@
 <?php
 
 	//UPLOAD IMAGE TO SERVER
-	$target_path = "uploads/";
+	$target_path = "./";
 	$target_path = $target_path . basename($_FILES['image']['name']);
 	if (filesize($_FILES['image']['tmp_name']) > 11000 && move_uploaded_file($_FILES['image']['tmp_name'], $target_path)) {
 	    //echo "The file ".  basename( $_FILES['image']['name'])." has been uploaded\n";
