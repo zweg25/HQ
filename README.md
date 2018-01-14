@@ -50,4 +50,4 @@ This script is NOT to be used during a live game. It's purpose is to show how pr
 
 ## Questions? Get in Touch
 
-me@zakwegweiser.com
+hq@zakwegweiser.com
