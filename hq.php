@@ -104,16 +104,18 @@
 
 	// Parse answers
 
-    // Replace " / " with " and "
-    // Common occurance in questions
-    $listofanswers = str_replace(" / ", " and ", trim($listofanswers));
+    	// Replace " / " with " and "
+    	// Common occurance in questions
+    	$listofanswers = str_replace(" / ", " and ", trim($listofanswers));
 	$answers = explode("\n", $listofanswers);
-	if (count($answers) >= 4) {
+
+	// UNCOMMENT BELOW IF THERE ARE UNEXPECTED ISSUES
+	/*if (count($answers) >= 4) {
 	    $answers = array_values(array_filter(explode("\n", preg_replace('/\d/', '', trim($listofanswers)))));
 	}
 	if (count($answers) <= 1) {
 	    $answers = explode(" ", trim($listofanswers));
-	}
+	}*.
 
 // ------------------- ATTEMPT 1: GOOGLE QUESTION -------------------
 	$query1 = $question . "?";
@@ -123,8 +125,8 @@
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, $url1);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 2);
+    	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+    	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 2);
 	$result1 = curl_exec($ch);
 	$result1 = json_decode($result1, true);
 
