@@ -10,6 +10,8 @@ My HQ answerer is a PHP script triggered by a screenshot upload. You take a pict
 
 Warning: It is by no means perfect! But is probably better than you on average ;)
 
+NOTE: This is developed as a backend software where the front-end is designed on a mac. If you want to use the front-end on WINDOWS, you will have to use third party apps or some other tricks yourself.
+
 ## Getting Started
 
 1) download PHP script and set it up on a localhost or webserver
